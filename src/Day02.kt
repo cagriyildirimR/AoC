@@ -18,21 +18,22 @@ fun day02() {
 
     val myChoice = mapOf('X' to "Rock", 'Y' to "Paper", 'Z' to "Scissor")
 
-    val xyz = mapOf(
+    val xyzTable = mapOf(
         'X' to mapOf("Rock" to "Scissor", "Paper" to "Rock", "Scissor" to "Paper"),
         'Y' to mapOf("Rock" to "Rock", "Paper" to "Paper", "Scissor" to "Scissor"),
         'Z' to mapOf("Rock" to "Paper", "Paper" to "Scissor", "Scissor" to "Rock"))
 
-    val inp = mapOf('A' to "Rock", 'B' to "Paper", 'C' to "Scissor")
+    val opTable = mapOf('A' to "Rock", 'B' to "Paper", 'C' to "Scissor")
 
     var result1 = 0
     var result2 = 0
     for (i in input) {
-        val key1 = inp[i.first()]!! + " " + myChoice[i.last()]!!
+        val opponentChoice = opTable[i.first()]!!
+
+        val key1 = opponentChoice + " " + myChoice[i.last()]!!
         result1 += resultTable[key1]!!
 
-        val opponentChoice = inp[i.first()]!!
-        val key2 = opponentChoice + " " + xyz[i.last()]!![opponentChoice]
+        val key2 = opponentChoice + " " + xyzTable[i.last()]!![opponentChoice]
         result2 += resultTable[key2]!!
     }
 
