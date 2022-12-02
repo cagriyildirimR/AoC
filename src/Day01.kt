@@ -1,4 +1,4 @@
-fun Day01() {
+fun day01() {
     val file = readInput("Day01")
 
     var max = 0
@@ -14,6 +14,6 @@ fun Day01() {
             total += it.toInt()
         }
     }
-    println(l.maxOf { it })
-    println(l.sorted().reversed().take(3).sum())
+    l.maxOf { it }.print()
+    l.sorted().reversed().take(3).sum().print()
 }
