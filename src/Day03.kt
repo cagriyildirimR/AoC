@@ -25,10 +25,9 @@ fun day03Part2(){
 
     var priority = 0
 
-    for (ii in rs.indices step 3){
-        for (c in rs[ii]){
-            println(c)
-            if (c in rs[ii+1] && c in rs[ii+2]) {
+    for (i in rs.indices step 3){
+        for (c in rs[i]){
+            if (c in rs[i+1] && c in rs[i+2]) {
                 priority += priorityCalculator(c)
                 break
             }
@@ -38,5 +37,5 @@ fun day03Part2(){
 }
 
 fun priorityCalculator(c: Char): Int {
-    return if (c in "abcdefghijklmnopqrstuvwxyz") c.code - 96 else c.code - 38
+    return if (c in "abcdefghijklmnopqrstuvwxyz") c.code - 'a'.code + 1 else c.code - 38
 }
