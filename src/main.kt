@@ -1,4 +1,4 @@
 fun main() {
-//    day12Part1()
-    day12Part2()
+    day13Part1()
+    day13Part2()
 }
