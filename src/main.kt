@@ -1,3 +1,5 @@
+import java.util.*
+
 fun main() {
-    day15()
+    day25Part1()
 }
